@@ -42,4 +42,49 @@ public class TestElfShould {
         smallElf.addCalories(3000);
         assertThat(smallElf.compareTo(bigElf), lessThan(0));
     }
+
+    @Test
+    void have_total_when_calories_added_scenario1() {
+        Elf elf = new Elf();
+        elf.addCalories(1000);
+        elf.addCalories(2000);
+        elf.addCalories(3000);
+
+        assertThat(elf.getTotalCalories(), equalTo(6000));
+    }
+
+    @Test
+    void have_total_when_calories_added_scenario2() {
+        Elf elf = new Elf();
+        elf.addCalories(4000);
+
+        assertThat(elf.getTotalCalories(), equalTo(4000));
+    }
+
+    @Test
+    void have_total_when_calories_added_scenario3() {
+        Elf elf = new Elf();
+        elf.addCalories(5000);
+        elf.addCalories(6000);
+
+        assertThat(elf.getTotalCalories(), equalTo(11000));
+    }
+
+    @Test
+    void have_total_when_calories_added_scenario4() {
+        Elf elf = new Elf();
+        elf.addCalories(7000);
+        elf.addCalories(8000);
+        elf.addCalories(9000);
+
+        assertThat(elf.getTotalCalories(), equalTo(24000));
+    }
+
+    @Test
+    void have_total_when_calories_added_scenario5() {
+        Elf elf = new Elf();
+        elf.addCalories(10000);
+
+        assertThat(elf.getTotalCalories(), equalTo(10000));
+    }
 }
